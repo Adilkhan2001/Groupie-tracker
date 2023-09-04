@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/normolize.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/media.css">
+    <title>Bands</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="container">
+                <h1 class="header__title">
+                    Groupie-tracker
+                </h1>
+                <form class="search-container" action="/" method="POST">
+                    <input list="artists" type="text" class="search-box" name="search" id="inputField" placeholder="Search...">
+                    <datalist id="artists">
+                        
+                        {{ range .List }}
+                            <option value="{{.}}"></option>
+                        {{ end }}
+
+                      </datalist>
+                    <button class="search-button btn" type="submit">Search</button>
+                   
+                    
+                </form>
+                <!-- <form class="search-container" action="/" method="POST">
+                    <input type="text" class="search-box" name="search" placeholder="Search...">
+                    <button class="search-button btn" type="submit">Search</button>
+                </form>  -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="main-section">
+                {{ range .Band }}
+                <a class="main__link" href="/artist/{{.ID}}">
+                    <img src="{{.Image}}" alt="{{.Name}}">
+                </a>
+                {{ end }}
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h1 style="color: #DCF4DF; text-align:center;">Credits to Adilkhan & Aizhaina.</h1>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+

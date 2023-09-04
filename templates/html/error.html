@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/normolize.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/media.css">
+    <title>{{.Name}}</title>
+</head>
+
+<body class="errors">
+    <div class="container">
+        <div class="error-container">
+            <h1 class="header__title"> {{.Code}} </h1>
+            <h2 class="header__title">{{.Name}}</h2>
+            <br>
+            <br><br>
+            {{if .Message}}
+            <h3 class="artist__title"> {{.Message}} </h3>
+            {{end}}
+        </div>
+    </div>
+    <!-- <form action="/ascii-art" method="POST">
+        <input type="submit" value="Go Back" class="button" name="">
+    </form> -->
+</body>
+
+</html>

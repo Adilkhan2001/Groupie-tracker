@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Band.Name}}</title>
+    <link rel="stylesheet" href="/static/normolize.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/media.css">
+    <link rel="icon" href="https://groupietrackers.herokuapp.com/api/images/{{.Name}}.jpeg" type="image/icon type">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="container">
+                <h1 class="header__title">
+                    Groupie-tracker
+                </h1>
+                <!-- <form class="search-container" action="/" method="POST">
+                    <input type="text" class="search-box" name="search" placeholder="Search...">
+                    <button class="search-button" type="submit">Search</button>
+                </form> --->
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="artist-box">
+                <div class="artist-item">
+                    <h2 class="artist__title"> {{.Band.Name}} </h2>
+                    <img class="artist__image" src="{{.Band.Image}}" alt="">
+                    <p class="artist-item__text">Creation Date: {{.Band.CreationDate}} </p>
+                    <p class="artist-item__text">First Album: {{.Band.FirstAlbum}}</p>
+                </div>
+                <section class="artist__section">
+                    <div class="section-box section-box-1">
+                        <h3 class="section__title">
+                            Band Members
+                        </h3>
+                        <span class="section__span"></span>
+                        <ul class="artist-list list-reset">
+                            {{range .Band.Members}}
+                            <li class="artist-list__item">{{.}}</li>
+                            {{end}}
+                        </ul>
+                    </div>
+                    <div class="section-box section-box-2">
+                        <h3 class="section__title">Performance Locations</h3>
+                        <span class="section__span"></span>
+                        <ul class="section-list list-reset">
+                            {{range $loc,$data := .Locations}}
+
+
+                            <li class="section-list-item">
+                                <div class="text-1">{{$loc}}</div>
+                                {{range $data}}
+                                <div class="text-2">{{.}}</div>
+                                <br>
+                                {{end}}
+
+                                {{end}}
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- <form action="/artist/{{.Band.ID}}" method="POST">
+        <input type="submit" value="Go To Main Page" class="button"></button>
+    </form> -->
+                <a class="back btn" href="/">Back</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h1 style="color: #DCF4DF; text-align:center;">Credits to Adilkhan & Aizhaina.</h1>
+        </div>
+    </footer>
+</body>
+
+</html>
