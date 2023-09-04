@@ -8,7 +8,3 @@ To run program, run the following command
 Usage: go run cmd/main.go  
 
 
-## Our team
-- [Adilkhan2001_alem](https://01.alem.school/git/Adilkhan2001_alem)
-
- - [Aizhaina](https://01.alem.school/git/Aizhaina)
